@@ -1,27 +1,65 @@
 import numpy as np
 import random
 
-# GCD // MDC
-def mdc(n1,n2):
-    r = 0
+#MDC
+def mdc(x,y):
+    r = None
     while r != 0:
-        r = n1 % n2
-        n1 = n2
-        n2 = r
-        return n1
+        r = x % y
+        x = y
+        y = r
+    return x
 
-# RSA_values // Entrada de valores RSA
+
+#Algorítmo de Euclides Estendido
+def euclid_est(x1,x2):
+    d = 0
+    x1 = 0
+    x2 = 1
+    y1 = 1
+    temp_phi = phi
+while e > 0:
+        temp1 = temp_phi/e
+        temp2 = temp_phi - temp1 * e
+        temp_phi = e
+        e = temp2
+
+        x = x2- temp1* x1
+        y = d - temp1 * y1
+
+        x2 = x1
+        x1 = x
+        d = y1
+        y1 = y
+
+if temp_phi == 1:
+    return d + phi
+
+#Teste de primariedade
+def primo(num):
+    if num == 2:
+        return True
+    if num < 2 or num % 2 == 0:
+        return False
+    for n in xrange(3, int(num**0.5)+2,2):
+        if num % n == 0:
+            return False
+    return True
+
+#Entrada de valores RSA
 n1 = int(input('Entre com um número primo:'))
 n2 = int(input('Entre com um número primo diferente do anterior:'))
 
-# Totient_function // Função Totiente
-phi = (n1 - 1) * (n2 -1) # Coprime integers // co-primos
-
-# Public_Key // Calculo das Chaves Púlicas
-e = random.randint(1, phi)
-if mdc(e,phi) != 1:
-    e = random.randint(1,phi)
+#Validação do n1 e n2
 
 
+#Função Totiente
+phi = (n1 - 1) * (n2 - 1) # Co-primos
 
+#Calculo das Chaves Púlicas
+e = random.randint(1, phi) # 'e' aleatório na faixa 1 < e < phi
+m = mdc(e,phi)
+while m != 1:
+    e = random.randint(1, phi)
+    m = mdc(e,phi)
 ####################### in construction #######################
