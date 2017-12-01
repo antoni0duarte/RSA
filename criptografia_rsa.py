@@ -81,6 +81,5 @@ def esconde(msg):
     for i in range (0, len(msg)):
         v1 = np.array((ord(msg[i])** e) % n )
         print(v1)
-
-
+'''
 ####################### in construction #######################
