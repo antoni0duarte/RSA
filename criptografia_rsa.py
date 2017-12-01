@@ -62,4 +62,25 @@ m = mdc(e,phi)
 while m != 1:
     e = random.randint(1, phi)
     m = mdc(e,phi)
+    
+    
+    
+   ''' 
+#FAIL_PART   
+import numpy as np
+#RSA_valores
+p = 17
+q = 41
+n = p * q 
+phi = (p - 1) * (q - 1) 
+e = 13
+d = 197
+
+def esconde(msg):
+    msg =(input('Digite sua mensagem:'))
+    for i in range (0, len(msg)):
+        v1 = np.array((ord(msg[i])** e) % n )
+        print(v1)
+
+
 ####################### in construction #######################
