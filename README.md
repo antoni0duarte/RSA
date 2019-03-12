@@ -1,2 +1,2 @@
-# UFRN - 2017.1 
+# UFRN 
   Trabalhos das disciplinas de algorítmo 
