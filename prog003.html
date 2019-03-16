@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<title> Teste Prog 003</title>
+<script>
+//Declaração de variaveis
+var HT, VH, PD, SB, SL;
+
+// Entrada de dados
+
+HT = parseFloat(prompt("Qual a quantidade de horas trabalhadas:"));
+VH = parseFloat(prompt("Qual o valor de hora aula:"));
+PD = parseFloat(prompt("Qual o percentual de desconto do INSS:"));
+
+//Processamento
+
+PD = (PD/100);
+SB = (HT*VH);
+SL = (1 - PD) * SB;
+
+//Saida de dados
+
+document.writeln("<h3>O salário é de = " + SL + " reais");
+
+document.writeln("<hr>");
+document.writeln("<table border=1>");
+	document.writeln("<tr>");
+	document.writeln("<td>" + HT + "</td>");
+	document.writeln("<td>" + VH + "</td>");
+	document.writeln("<td>" + PD + "</td>");
+	document.writeln("<td>" + SB + "</td>");
+	document.writeln("<td>" + SL + "</td>");
+document.writeln("</hr>");
+</script>
+
+
+
+</html>
+</html
